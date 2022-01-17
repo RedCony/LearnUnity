@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class RouletteController : MonoBehaviour
 {
+    public enum eDir
+    {
+        LEFT = 1, RIGHT = -1
+    }
+    public float deceleration;
+
+    public eDir dir;
+    public float initRotSpeed = 10;
     float rotSpeed = 0;
     // Start is called before the first frame update
     void Start()
@@ -17,9 +25,12 @@ public class RouletteController : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
-            this.rotSpeed = 10;
+            rotSpeed =this.initRotSpeed * (int)dir;
         }
-        
-        transform.Rotate(0, 0, this.rotSpeed);
+        //회전 속도 만큰 룰렛을 회전 시킨다.
+        this.transform.Rotate(0, 0, this.rotSpeed);
+
+        //룰렛 속도를 감속시킨다.
+        this.rotSpeed *= this.deceleration;
     }
 }
