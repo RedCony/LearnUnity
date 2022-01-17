@@ -423,6 +423,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fadac5c33fc154696421e82cb47738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  hp: 0
+  myName: 
+  isDie: 0
+  arrNames: []
+  playerGo: {fileID: 741949752}
 --- !u!4 &1766006444
 Transform:
   m_ObjectHideFlags: 0
