@@ -21,6 +21,10 @@ public class App : MonoBehaviour
         Debug.Log(dir);
         float distance = dir.magnitude;
         Debug.Log(distance);
+
+        Vector2 playerpos = new Vector2(2, 3);
+        playerpos += new Vector2(8,5);
+        Debug.Log(playerpos);
     }
 
     // Update is called once per frame
