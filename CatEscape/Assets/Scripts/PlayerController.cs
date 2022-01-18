@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float _rightBoundary = 0f;
-    [SerializeField] private float _leftBoundary = 0f;
+    [SerializeField] private float _rightBoundary = 8.0f;
+    [SerializeField] private float _leftBoundary = -8.0f;
     [SerializeField] private float _speed = 3.0f;
+
+    public GameObject player_;
 
     // Start is called before the first frame update
     void Start()
@@ -21,38 +23,43 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            this.transform.Translate(-3, 0, 0, Space.World);
+            Movement();
+            player_.transform.Translate(-8, 0, 0, Space.World);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            this.transform.Translate(3, 0, 0, Space.World);
+            Movement();
+            player_.transform.Translate(8, 0, 0, Space.World);
         }
     }
 
     public void LButtonDown()
     {
-       
-       
-        
+        Movement();
+
+        player_.transform.Translate(-8, 0, 0, Space.World);
+
     }
 
     public void RButtonDown()
     {
-        transform.Translate(_speed, 0, 0, Space.World);
+        Movement();
+
+        player_.transform.Translate(8, 0, 0, Space.World);
     }
 
     public void Movement()
     {
         Boundary();
-        float _horizontalInput = Input.GetAxisRaw("Horizontal");
-        Vector3 _direction = new Vector3(_horizontalInput, 0, 0).normalized;
-        transform.Translate(_direction * _speed * Time.deltaTime, 0, 0);
+        float _horizontalInput = Input.GetAxisRaw("Horizontal") ;
+        Vector3 _direction = new Vector3(_horizontalInput, -3, 0).normalized;
+        player_.transform.Translate(_direction.x * _speed * Time.deltaTime, 0,0);
     }
 
     public void Boundary()
     {
-        float _xMovementClamp = Mathf.Clamp(transform.position.x, _leftBoundary, _rightBoundary);
-        transform.position = new Vector3(_xMovementClamp, 0, 0);
+        float _xMovementClamp = Mathf.Clamp(player_.transform.position.x, _leftBoundary, _rightBoundary);
+        player_.transform.position = new Vector3(_xMovementClamp, -3, 0);
     }
 }

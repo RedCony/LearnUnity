@@ -330,6 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e4f6fdd0c40a34eb5c566549535951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rightBoundary: 0
+  _leftBoundary: 0
+  _speed: 3
+  player_: {fileID: 622590723}
 --- !u!212 &622590725
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -694,7 +698,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 181, y: 174}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1067222794
 MonoBehaviour:
@@ -826,7 +830,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 181, y: 174}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1790932899
 MonoBehaviour:
