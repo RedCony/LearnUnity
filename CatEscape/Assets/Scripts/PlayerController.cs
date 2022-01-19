@@ -23,37 +23,43 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Movement();
-            player_.transform.Translate(-8, 0, 0, Space.World);
+            Boundary();
+            float _horizontalInput = Input.GetAxis("Horizontal");
+            Vector3 _direction = new Vector3(_horizontalInput, 0, 0).normalized;
+            player_.transform.Translate(-(_direction.x *_speed * Time.deltaTime), 0, 0);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Movement();
-            player_.transform.Translate(8, 0, 0, Space.World);
+            Boundary();
+            float _horizontalInput = Input.GetAxis("Horizontal");
+            Vector3 _direction = new Vector3(_horizontalInput, 0, 0).normalized;
+            player_.transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
         }
     }
 
     public void LButtonDown()
     {
-        Movement();
-
-        player_.transform.Translate(-8, 0, 0, Space.World);
+        Boundary();
+        float _horizontalInput = Input.GetAxis("Horizontal");
+        Vector3 _direction = new Vector3(_horizontalInput, 0, 0).normalized;
+        player_.transform.Translate(-(_direction.x * _speed * Time.deltaTime), 0, 0);
 
     }
 
     public void RButtonDown()
     {
-        Movement();
-
-        player_.transform.Translate(8, 0, 0, Space.World);
+        Boundary();
+        float _horizontalInput = Input.GetAxis("Horizontal");
+        Vector3 _direction = new Vector3(_horizontalInput,0 , 0).normalized;
+        player_.transform.Translate(_direction.x * _speed * Time.deltaTime, 0, 0);
     }
 
     public void Movement()
     {
         Boundary();
-        float _horizontalInput = Input.GetAxisRaw("Horizontal") ;
-        Vector3 _direction = new Vector3(_horizontalInput, -3, 0).normalized;
+        float _horizontalInput = Input.GetAxis("Horizontal") ;
+        Vector3 _direction = new Vector3(_horizontalInput, 0, 0).normalized;
         player_.transform.Translate(_direction.x * _speed * Time.deltaTime, 0,0);
     }
 
