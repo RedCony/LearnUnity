@@ -26,7 +26,7 @@ public class ArrowGenerator : MonoBehaviour
             var arrowController = arrowGo.GetComponent<ArrowController>();
             var randSpeed = Random.Range(1,3);
             var randPosX = Random.Range(-8f, 9f);
-            arrowController.Init(randSpeed,new Vector3(randPosX,5,0));
+            //arrowController.Init(randSpeed,new Vector3(randPosX,5,0));
 
         }
     }
