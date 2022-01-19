@@ -38,8 +38,9 @@ public class ArrowController : MonoBehaviour
 
         if (distance < radiusSum)
         {
+            player.Hit(1f);
             Destroy(this.gameObject);
-            Debug.Log("Ãæµ¹!");
+            
         }
     }
     private void OnDrawGizmos()

@@ -8,16 +8,36 @@ public class PlayerController : MonoBehaviour
     public float radius = 1.0f;
     public Transform leftBoundaryPoint;
     public Transform rightBoundaryPoint;
+    public System.Action<float> OnHit;
+    public System.Action OnDie;
+    public float maxHp;
+
+    private float hp;
+    public float HP
+    {
+        get { return this.hp; }
+        set { hp = Mathf.Clamp(value, 0, maxHp); }
+    }
+    
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
+    public void Init(float maxHp, Transform leftBoundary, Transform rightBoundary, Vector3 initPos)
+    {
+        this.maxHp = maxHp;
+        this.hp = this.maxHp;
+        this.leftBoundaryPoint = leftBoundary;
+        this.rightBoundaryPoint = rightBoundary;
+        this.transform.position = initPos;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameMain.isGameOver) return;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             this.transform.Translate(Vector2.left * this.speed);
@@ -43,4 +63,24 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, this.radius);
     }
+
+    public void Hit(float damage)
+    {
+        HP -= damage;
+       
+        if(HP <= 0)
+        {
+            this.HP = 0;
+        }
+        
+        OnHit(GetPercentageByHp());
+        if (HP == 0)
+        {
+            this.OnDie();
+        }
+    }
+    private float GetPercentageByHp()
+    {
+        return HP / this.maxHp;
+    } 
 }
