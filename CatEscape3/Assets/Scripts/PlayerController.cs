@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed=1;
+    public float radius = 1.0f;
     public Transform leftBoundaryPoint;
     public Transform rightBoundaryPoint;
 
@@ -35,5 +36,11 @@ public class PlayerController : MonoBehaviour
         pos.x = Mathf.Clamp(this.transform.position.x, this.leftBoundaryPoint.position.x, this.rightBoundaryPoint.position.x);
         this.transform.position = pos;
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, this.radius);
     }
 }
