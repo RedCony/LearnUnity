@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ArrowController : MonoBehaviour
@@ -10,7 +11,7 @@ public class ArrowController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       // this.player = GameObject.FindObjectOfType<PlayerController>();
     }
     public void Init(float speed,Vector3 initPos)
     {
@@ -38,7 +39,7 @@ public class ArrowController : MonoBehaviour
 
         if (distance < radiusSum)
         {
-            player.Hit(1f);
+            player.Hit(1);
             Destroy(this.gameObject);
             
         }

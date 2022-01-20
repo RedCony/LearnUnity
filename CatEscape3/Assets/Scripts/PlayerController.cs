@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public System.Action OnDie;
     public float maxHp;
 
-    private float hp;
+    public float hp;
     public float HP
     {
         get { return this.hp; }
@@ -23,7 +26,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.maxHp = 10;
         
+        this.hp = this.maxHp;
     }
     public void Init(float maxHp, Transform leftBoundary, Transform rightBoundary, Vector3 initPos)
     {
@@ -64,23 +69,23 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(this.transform.position, this.radius);
     }
 
-    public void Hit(float damage)
+    public void Hit(int damage)
     {
-        HP -= damage;
-       
-        if(HP <= 0)
+        this.hp -= damage;
+
+        if(hp <= 0)
         {
-            this.HP = 0;
+            this.hp = 0;
         }
-        
-        OnHit(GetPercentageByHp());
-        if (HP == 0)
+        float decresingHP = this.hp / this.maxHp;
+        this.OnHit(decresingHP);
+        if (hp <= 0)
         {
             this.OnDie();
         }
     }
-    private float GetPercentageByHp()
+    public float GetPercentageByHp()
     {
-        return HP / this.maxHp;
+        return this.hp / this.maxHp;
     } 
 }

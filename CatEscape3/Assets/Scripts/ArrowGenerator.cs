@@ -15,16 +15,20 @@ public class ArrowGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.delta += Time.deltaTime;
-        if (this.delta > 1.0f)
+        if (!GameMain.isGameOver)
         {
-            this.delta = 0;
-            var arrowGo = Instantiate<GameObject>(this.arrowPrefab);
-            var arrowController = arrowGo.GetComponent<ArrowController>();
-            var randSpeed = Random.Range(1, 3);
-            var randPosX = Random.Range(-8f, 9f);
-            arrowController.Init(randSpeed, new Vector3(randPosX, 4, 0));
-            
+            this.delta += Time.deltaTime;
+            if (this.delta > 1.0f)
+            {
+                this.delta = 0;
+                var arrowGo = Instantiate<GameObject>(this.arrowPrefab);
+                var arrowController = arrowGo.GetComponent<ArrowController>();
+                var randSpeed = Random.Range(1, 3);
+                var randPosX = Random.Range(-8f, 9f);
+                arrowController.Init(randSpeed, new Vector3(randPosX, 4, 0));
+
+            }
         }
+        
     }
 }

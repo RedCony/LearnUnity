@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMain : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class GameMain : MonoBehaviour
     public ArrowGenerator arrowGenerator;
     public Transform leftBoundary;
     public Transform rightBoundary;
+    public UIGameOver uiGameOver;
     public static bool isGameOver = false;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,7 @@ public class GameMain : MonoBehaviour
 
     public void Init()
     {
-        this.player.Init(10, this.leftBoundary, this.rightBoundary, new Vector3(0, -3.6f, 0));
+       // this.player.Init(10, this.leftBoundary, this.rightBoundary, new Vector3(0, -3.6f, 0));
 
         this.player.OnHit = (fillAmount) =>
         {
