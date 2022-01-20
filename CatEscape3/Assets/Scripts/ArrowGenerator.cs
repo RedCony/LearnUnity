@@ -23,7 +23,7 @@ public class ArrowGenerator : MonoBehaviour
                 this.delta = 0;
                 var arrowGo = Instantiate<GameObject>(this.arrowPrefab);
                 var arrowController = arrowGo.GetComponent<ArrowController>();
-                var randSpeed = Random.Range(1, 3);
+                var randSpeed = Random.Range(3, 5);
                 var randPosX = Random.Range(-8f, 9f);
                 arrowController.Init(randSpeed, new Vector3(randPosX, 4, 0));
 

@@ -8,6 +8,7 @@ public class ArrowController : MonoBehaviour
     public float speed = 1.0f;
     public float radius = 0.5f;
     public PlayerController player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class ArrowController : MonoBehaviour
         this.speed = speed;
         this.transform.position = initPos;
         this.player = GameObject.FindObjectOfType<PlayerController>();
+        
     }
 
     // Update is called once per frame

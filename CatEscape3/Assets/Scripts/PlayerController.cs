@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     public float radius = 1.0f;
     public Transform leftBoundaryPoint;
     public Transform rightBoundaryPoint;
-    public System.Action<float> OnHit;
+    public System.Action<float>OnHit;
     public System.Action OnDie;
     public float maxHp;
-
+    [HideInInspector]
     public float hp;
     public float HP
     {
