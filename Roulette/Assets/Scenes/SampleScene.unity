@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deceleration: 0.5
   dir: 1
-  initRotSpeed: 10
+  initRotSpeed: 100
 --- !u!212 &1354875929
 SpriteRenderer:
   m_ObjectHideFlags: 0
