@@ -23,10 +23,8 @@ public class GameMain : MonoBehaviour
 
         player.OnHit = () =>
         {
-            //UI를 갱신 한다 
-            //cat의 hp와 maxHp를 알아야 한다 
             var per = this.player.GetHp() / this.player.GetMaxHp();
-            this.hpGauge.fillAmount = per;  //0 ~ 1
+            this.hpGauge.fillAmount = per;  
         };
 
         this.btnGo.onClick.AddListener(() => {

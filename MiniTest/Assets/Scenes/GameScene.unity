@@ -154,13 +154,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  flagGo: {fileID: 1947386777}
-  distanceText: {fileID: 1521529532}
   hp: 0
   maxHp: 10
   radius: 1
   trapRadius: 1
   trapGo: {fileID: 1244568422}
+  flagGo: {fileID: 1947386777}
+  distanceText: {fileID: 1521529532}
 --- !u!212 &56389191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1585,7 +1585,7 @@ GameObject:
   - component: {fileID: 1988957756}
   - component: {fileID: 1988957755}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIPan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

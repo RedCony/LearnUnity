@@ -7,17 +7,21 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
-    public float speed;
-    public GameObject flagGo;
+   
     private bool canMove = false;
-    public Text distanceText;
+    private bool canHit = true;
+
+    public float speed;
     private float distance;
     public float hp;
     public float maxHp;
     public float radius = 1.0f;
     public float trapRadius = 1.0f;
+
     public GameObject trapGo;
-    private bool canHit = true;
+    public GameObject flagGo;
+    public Text distanceText;
+
     public UnityAction OnHit;
     public UnityAction<int> OnGetCoin;
 
@@ -51,7 +55,7 @@ public class Player : MonoBehaviour
             {
                 if (this.canHit)
                 {
-                    Debug.Log("아얏!");
+                    Debug.Log("장애물 통과중!");
                     this.hp -= 1;
                     this.canHit = false;
                     this.OnHit();
