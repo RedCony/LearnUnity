@@ -11,6 +11,10 @@ public class Hero : MonoBehaviour
 
     Coroutine coroutine;
 
+    public UnityAction OnImpact;
+    public UnityAction OnHit;
+   
+
     public float attackPow;
     public float speed;
    
@@ -18,15 +22,18 @@ public class Hero : MonoBehaviour
     private float radius;
     private float distance;
 
-    public UnityAction OnImpact;
-    public UnityAction OnHit;
+  
+    private bool canHit = true;
+
+    
+
 
     public Slime slime;
     // Start is called before the first frame update
     void Start()
     {
         this.animator = GetComponent<Animator>();
-        this.speed = 2f;
+        this.speed = 1f;
     }
 
     public void Move()
@@ -40,18 +47,19 @@ public class Hero : MonoBehaviour
 
     IEnumerator MoveRoutine()
     {
-        this.animator.Play("WaldForwardBattle", -1, 0);
-        this.transform.LookAt(slime.transform.position);
-        while (true)
-        {
-            var dis = Vector3.Distance(this.transform.position, slime.transform.position);
-            if(dis <= 0.1f)
+            this.animator.Play("WalkForwardBattle", -1, 0);
+            this.transform.LookAt(slime.transform.position);
+            while (true)
             {
-                break;
+                var dis = Vector3.Distance(this.transform.position, slime.transform.position);
+                if (dis <= 0.1f)
+                {
+                        break;
+                }
+                this.transform.Translate(Vector3.forward * this.speed * Time.deltaTime);
+                yield return null;
             }
-            this.transform.Translate(Vector3.forward * this.speed * Time.deltaTime);
-        }
-        yield return null;
+        this.animator.Play("Idle_Battle", -1, 0);
     }
 
     public void AutoAttack()
@@ -65,7 +73,17 @@ public class Hero : MonoBehaviour
 
     IEnumerator AutoAttackRoutine()
     {
-        yield return null;
+        while (true)
+        {
+            this.animator.Play("Attack01", -1, 0);
+            yield return new WaitForSeconds(0.4998f - 0.15f);
+            this.OnImpact();
+            yield return new WaitForSeconds(0.833f - (0.4998f + 0.15f));
+            animator.Play("Idle_Battle", -1, 0);
+            this.OnHit();
+        }
+        
+      
     }
     public void Attack01()
     {

@@ -28,7 +28,15 @@ public class HeroMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            btnAttack.onClick.AddListener(() => { hero.Move(); });
+            hero.OnHit = () => { hero.AutoAttack(); };
+            hero.OnImpact = () => { slime.GetHit(); };
+        }
 
+
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             btnAttack.onClick.AddListener(() => { hero.Attack02();});
