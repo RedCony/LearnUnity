@@ -11,29 +11,58 @@ public class Hero : MonoBehaviour
 
     Coroutine coroutine;
 
+    Rigidbody rigidbody;
+
+    GameObject target;
+
+    [Header("추격속도")]
+    [SerializeField] [Range(1f, 4f)] float moveSpeed = 2f;
+    [Header("근접 거리")]
+    [SerializeField] [Range(0f, 7f)] float contactDistance = 1f;
+
     public UnityAction OnImpact;
     public UnityAction OnHit;
    
 
     public float attackPow;
+    public float attackRange;
     public float speed;
    
 
     private float radius;
     private float distance;
+    private Vector3 targetTran;
+    private Vector3 heroTran;
 
   
     private bool canHit = true;
+    private bool follow = false;
 
     
 
 
-    public Slime slime;
+    //public Slime slime;
     // Start is called before the first frame update
     void Start()
     {
         this.animator = GetComponent<Animator>();
         this.speed = 1f;
+        this.rigidbody = GetComponent<Rigidbody>();
+        this.target = GameObject.FindGameObjectWithTag("Monster");
+        this.targetTran = target.transform.position;
+        this.heroTran = this.transform.position;
+
+    }
+
+   
+
+    private void OnTriggerEnter(Collider other)
+    {
+        follow = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        follow = false;
     }
 
     public void Move()
@@ -48,10 +77,10 @@ public class Hero : MonoBehaviour
     IEnumerator MoveRoutine()
     {
             this.animator.Play("WalkForwardBattle", -1, 0);
-            this.transform.LookAt(slime.transform.position);
+            this.transform.LookAt(targetTran);
             while (true)
             {
-                var dis = Vector3.Distance(this.transform.position, slime.transform.position);
+                var dis = Vector3.Distance(heroTran, targetTran);
                 if (dis <= 0.1f)
                 {
                         break;
@@ -154,6 +183,6 @@ public class Hero : MonoBehaviour
     }
     public void CalcDistance()
     {
-        this.distance = Vector3.Distance(this.transform.position, this.slime.transform.position);
+        this.distance = Vector3.Distance(heroTran,targetTran);
     }
 }

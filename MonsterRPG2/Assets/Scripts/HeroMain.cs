@@ -30,7 +30,11 @@ public class HeroMain : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            btnAttack.onClick.AddListener(() => { hero.Move(); });
+            btnAttack.onClick.AddListener(() =>
+            {
+                hero.Move();
+               // hero.AutoAttack();
+            });
             hero.OnHit = () => { hero.AutoAttack(); };
             hero.OnImpact = () => { slime.GetHit(); };
         }
