@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65758838dff7add4da40de538eab7082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 1919012576264764}
 --- !u!1 &593767363
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc73cc310ae7b44185eb958c540ac48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGo: {fileID: 1566972117}
-  enemyGo: {fileID: 135882230}
+  player: {fileID: 1566972119}
+  enemy: {fileID: 135882232}
   btnAttack: {fileID: 28633782}
 --- !u!4 &1529422996
 Transform:
@@ -633,6 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8aef6ffcf13414ebcbf06d02a96c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDelay: 0.5
+  impactOffset: 0.25
+  model: {fileID: 8422892627509448415}
 --- !u!1 &1589177490
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,80 +737,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1724520435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919012576264764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7083dc9079b7e9e49afa8311c6a1409f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 0
---- !u!136 &1724520436
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919012576264764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.35, z: 0}
---- !u!54 &1888491680
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8422892627509448415}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 64
-  m_CollisionDetection: 0
---- !u!136 &1888491683
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8422892627509448415}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3693107
-  m_Height: 1.512965
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.7025964, z: -0.1306893}
---- !u!114 &1888491684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8422892627509448415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e45f3f8903db0e428957a4cc33e1097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  contactDistance: 1
-  attackPow: 0
-  attackRange: 0
-  speed: 0
 --- !u!1 &2128914993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,8 +974,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4023215752423298}
   - component: {fileID: 95161444809732176}
-  - component: {fileID: 1724520436}
-  - component: {fileID: 1724520435}
   m_Layer: 0
   m_Name: Model
   m_TagString: Monster
@@ -3315,9 +3243,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8422892627509285631}
   - component: {fileID: 8422892627499973905}
-  - component: {fileID: 1888491680}
-  - component: {fileID: 1888491683}
-  - component: {fileID: 1888491684}
   m_Layer: 0
   m_Name: Model
   m_TagString: Player
