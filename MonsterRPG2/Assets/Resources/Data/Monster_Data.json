@@ -1,0 +1,66 @@
+[
+  {
+    "id": "100",
+    "name": "슬라임",
+    "grade": "일반",
+    "damage": "1.2",
+    "attackSpeed": "0.7",
+    "prefabName": "Slime"
+  },
+  {
+    "id": "101",
+    "name": "뿔거북이",
+    "grade": "일반",
+    "damage": "2.2",
+    "attackSpeed": "1.2",
+    "prefabName": "TurtleShell"
+  },
+  {
+    "id": "102",
+    "name": "데몬박쥐",
+    "grade": "에픽",
+    "damage": "13.1",
+    "attackSpeed": "3.1",
+    "prefabName": "DaemonBat_Green"
+  },
+  {
+    "id": "103",
+    "name": "데몬고스트",
+    "grade": "에픽",
+    "damage": "13.5",
+    "attackSpeed": "3.5",
+    "prefabName": "DaemonGhost_Brown"
+  },
+  {
+    "id": "104",
+    "name": "데몬토끼",
+    "grade": "에픽",
+    "damage": "13.6",
+    "attackSpeed": "3.6",
+    "prefabName": "DaemonRabbit_Red"
+  },
+  {
+    "id": "105",
+    "name": "데몬슬라임",
+    "grade": "에픽",
+    "damage": "15",
+    "attackSpeed": "5.1",
+    "prefabName": "DaemonSlime_Blue"
+  },
+  {
+    "id": "106",
+    "name": "드래곤테러브링거",
+    "grade": "전설",
+    "damage": "51.5",
+    "attackSpeed": "20.5",
+    "prefabName": "DragonTB_Purple"
+  },
+  {
+    "id": "107",
+    "name": "드래곤 강탈자",
+    "grade": "전설",
+    "damage": "105.5",
+    "attackSpeed": "35.8",
+    "prefabName": "DragonUsurper_Red"
+  }
+]

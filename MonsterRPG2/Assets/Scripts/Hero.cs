@@ -49,7 +49,7 @@ public class Hero : MonoBehaviour
         this.speed = 1f;
         this.rigidbody = GetComponent<Rigidbody>();
         this.target = GameObject.FindGameObjectWithTag("Monster");
-        this.targetTran = target.transform.position;
+        //this.targetTran = target.transform.position;
         this.heroTran = this.transform.position;
 
     }
