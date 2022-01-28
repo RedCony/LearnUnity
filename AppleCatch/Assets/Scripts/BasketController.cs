@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class BasketController : MonoBehaviour
 {
+    GameObject director;
+
+    public AudioClip appleSE;
+    public AudioClip bombSE;
+    AudioSource aud;
      void OnTriggerEnter(Collider other)
     {
         Debug.Log("¿‚æ“¥Ÿ.");
         if (other.tag.Equals("Apple"))
         {
             Debug.Log("Tag=Apple");
+            this.director.GetComponent<GameDirector>().GetApple();
+            this.aud.PlayOneShot(this.appleSE);
         }
         else
         {
             Debug.Log("Tag=Bomb");
+            this.director.GetComponent<GameDirector>().GetBomb();
+            this.aud.PlayOneShot(this.bombSE);
         }
         Destroy(other.gameObject);
     }
     void Start()
     {
+        this.aud = GetComponent<AudioSource>();
+        this.director =GameObject.Find("GameDirector");
         
     }
 
@@ -38,4 +49,6 @@ public class BasketController : MonoBehaviour
             }
         }
     }
+
+   
 }
