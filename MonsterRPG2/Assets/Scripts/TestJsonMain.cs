@@ -9,11 +9,13 @@ public class TestJsonMain : MonoBehaviour
 {
 
     public GameObject slimePrefab;
+    public GameObject respwanpoint;
     public Button btnDie;
 
     public int dropItemId = 100;
     public int sPawnid;
 
+    private Slime slime;
     private UnityAction dieAction;
     private BoxCollider area;
 
@@ -22,8 +24,9 @@ public class TestJsonMain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slimePrefab = GameObject.FindGameObjectWithTag("Monster");
-        sPawnid = Random.Range(100, 107);
+        //this.slimePrefab = GameObject.FindGameObjectWithTag("Monster");
+        this.slime = this.slimePrefab.GetComponent<Slime>();
+        sPawnid = 100; //Random.Range(100, 107);
         area = GetComponent<BoxCollider>();
         DataManager.GetInstance().LoadWeaponData();
         DataManager.GetInstance().LoadMonsterData();
@@ -31,13 +34,13 @@ public class TestJsonMain : MonoBehaviour
         MonsterData monsterData = DataManager.GetInstance().GetMonsterData(sPawnid);
         GameObject prefab1 = Resources.Load<GameObject>(monsterData.prefabName);
         GameObject prefabClone1 = Instantiate<GameObject>(prefab1);
-        prefabClone1.transform.position = this.slimePrefab.transform.position;
+        prefabClone1.transform.position = this.respwanpoint.transform.position;
 
         this.dieAction = () => {
             WeaponData weaponData = DataManager.GetInstance().GetWeaponData(dropItemId);
             GameObject prefab = Resources.Load<GameObject>(weaponData.prefabName);
             GameObject prefabClone = Instantiate<GameObject>(prefab);
-            prefabClone.transform.position = this.slimePrefab.transform.position;
+            prefabClone.transform.position = this.respwanpoint.transform.position;
 
             Destroy(prefabClone1);
         };
@@ -50,7 +53,7 @@ public class TestJsonMain : MonoBehaviour
     private IEnumerator DieRoutine()
     {
         
-        this.slimePrefab.GetComponent<Animator>().Play("Die");
+        this.slime.GetComponent<Animator>().Play("Die");
         yield return new WaitForSeconds(1.333f);
         Debug.Log("die 애니메이션 종료");
         this.dieAction();
@@ -74,7 +77,7 @@ public class TestJsonMain : MonoBehaviour
     private void Spawn()
     {
 
-        int selection;
+        //int selection;
     }
     
     // Update is called once per frame

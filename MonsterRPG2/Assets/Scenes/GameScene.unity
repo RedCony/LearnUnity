@@ -260,11 +260,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!95 &777900099 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95471671811264702, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
-  m_PrefabInstance: {fileID: 902931360}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &902931360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,7 +422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170308, guid: 4c4ea267b7f410b418aa1a42c46bacd3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 405600, guid: 4c4ea267b7f410b418aa1a42c46bacd3, type: 3}
       propertyPath: m_RootOrder
@@ -505,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ffe4df61081454e98b137418e352ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 777900099}
   id: 0
 --- !u!4 &1777928691
 Transform:
