@@ -8,6 +8,8 @@ public class UIInventory : MonoBehaviour
     public UIItem[] uiItems;
     public SpriteAtlas atlas;
 
+    ItemInfo uiItemInfo;
+
     public void Init(ItemInfo[] itemInfos, Dictionary<int, ItemData> dic)
     {
         for (int i = 0; i < uiItems.Length; i++)
@@ -16,12 +18,12 @@ public class UIInventory : MonoBehaviour
 
             if (i > itemInfos.Length - 1)
             {
-                ItemInfo uiItemInfo = null;
+                uiItemInfo = null;
                 uiItem.Init(null, uiItemInfo);
             }
             else
             {
-                ItemInfo uiItemInfo = itemInfos[i];
+                uiItemInfo = itemInfos[i];
                 ItemData itemData = dic[uiItemInfo.id];
                 //화면에 디스플레이 
                 Sprite sp = atlas.GetSprite(itemData.spritename);
