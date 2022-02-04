@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour
         int ranPoint = Random.Range(0, 9);
         GameObject enemy = Instantiate(enemyPrefabs[ranEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
         Rigidbody2D rigidbody = enemy.GetComponent<Rigidbody2D>();
+        
         Enemy enemyLogic = enemy.GetComponent<Enemy>();
         enemyLogic.player = player;
+
         if (ranPoint == 5 || ranPoint == 6)
         {
             enemy.transform.Rotate(Vector3.forward * 90);

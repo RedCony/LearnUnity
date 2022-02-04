@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     public GameObject player;
 
     SpriteRenderer spriteRenderer;
-    Rigidbody2D rigidbody;
+    //Rigidbody2D rigidbody;
 
     private void Awake()
     {
@@ -62,16 +62,19 @@ public class Enemy : MonoBehaviour
             Rigidbody2D rigidbody2D = bulletGo.GetComponent<Rigidbody2D>();
 
             Vector3 dirVec = player.transform.position - transform.position;
-            rigidbody2D.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
+            rigidbody2D.AddForce(dirVec.normalized *3, ForceMode2D.Impulse);
         }
         else if (enemyName == "L")
         {
-            GameObject bulletGor = Instantiate(enemybulletPrefabB, transform.position+Vector3.right*0.3f, transform.rotation);
+            GameObject bulletGor = Instantiate(enemybulletPrefabB, transform.position + Vector3.right * 0.3f, transform.rotation);
             GameObject bulletGol = Instantiate(enemybulletPrefabB, transform.position + Vector3.left * 0.3f, transform.rotation);
+
             Rigidbody2D rigidbody2Dr = bulletGor.GetComponent<Rigidbody2D>();
             Rigidbody2D rigidbody2Dl = bulletGol.GetComponent<Rigidbody2D>();
+
             Vector3 dirVecr = player.transform.position - (transform.position + Vector3.right * 0.3f);
             Vector3 dirVecl = player.transform.position - (transform.position + Vector3.left * 0.3f);
+
             rigidbody2Dr.AddForce(dirVecr.normalized * 4, ForceMode2D.Impulse);
             rigidbody2Dl.AddForce(dirVecl.normalized * 4, ForceMode2D.Impulse);
         }
@@ -85,6 +88,7 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BorderBullet") { Destroy(gameObject); }
+
         else if (collision.gameObject.tag == "PlayerBullet")
         {
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();

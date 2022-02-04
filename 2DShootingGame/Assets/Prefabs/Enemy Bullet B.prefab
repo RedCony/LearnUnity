@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6250287362325683268}
   - component: {fileID: 3443681250511997360}
   - component: {fileID: 496887985959483608}
-  - component: {fileID: -9172430966305567841}
   - component: {fileID: 5943142067514936125}
+  - component: {fileID: -9172430966305567841}
   m_Layer: 0
   m_Name: Enemy Bullet B
   m_TagString: EnemyBullet
@@ -106,19 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-9172430966305567841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402998213817200827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db7ed9be3c3e9645a73d38172526f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 1
 --- !u!58 &5943142067514936125
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,4 +121,17 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.20833333
+  m_Radius: 0.22
+--- !u!114 &-9172430966305567841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402998213817200827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db7ed9be3c3e9645a73d38172526f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 3

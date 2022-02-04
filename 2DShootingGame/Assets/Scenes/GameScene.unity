@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 109404654}
   - component: {fileID: 109404653}
   m_Layer: 0
-  m_Name: Right
+  m_Name: Left
   m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519844948
 GameObject:
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 704022276}
   - component: {fileID: 704022275}
   m_Layer: 0
-  m_Name: Left
+  m_Name: Rigjt
   m_TagString: BorderBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 808641746}
   - component: {fileID: 808641745}
   m_Layer: 0
-  m_Name: Right
+  m_Name: Left
   m_TagString: BorderBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,14 +1588,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290819537}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1614,7 +1614,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010253787, y: 0.005126953}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1625,7 +1625,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3}
+  m_Size: {x: 0.51532984, y: 0.99725914}
   m_EdgeRadius: 0
 --- !u!114 &1290819540
 MonoBehaviour:
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   isTouchBottom: 0
   isTouchLeft: 0
   isTouchRight: 0
-  life: 0
+  life: 3
   score: 0
   speed: 3
   power: 1
@@ -1652,6 +1652,7 @@ MonoBehaviour:
   bulletPrefabA: {fileID: 6402998213817200827, guid: 71fa511d1eac9e041b7bfbda7df47e44, type: 3}
   bulletPrefabB: {fileID: 7287866468681015122, guid: 3333b32d636f920439b9746f2917e19e, type: 3}
   gameManager: {fileID: 499531705}
+  isHit: 0
 --- !u!212 &1290819541
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2018,7 +2019,7 @@ GameObject:
   - component: {fileID: 1582256427}
   - component: {fileID: 1582256426}
   m_Layer: 0
-  m_Name: Left
+  m_Name: Right
   m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2122,7 +2123,7 @@ Transform:
   - {fileID: 1259356903}
   - {fileID: 624467184}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730822390
 GameObject:
