@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemData 
+public class ItemCounData 
 {
     public int id;
-    public string name;
-    public string spritename;
-    
-    
+    public int count;
 }

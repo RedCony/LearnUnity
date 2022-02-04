@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UIItem : MonoBehaviour
 {
     public Image icon;
+    public Text count;
+    
 
     public void Init(Sprite sp)
     {
@@ -18,6 +20,7 @@ public class UIItem : MonoBehaviour
             icon.sprite = sp;
             icon.SetNativeSize();
             this.icon.gameObject.SetActive(true);
+            
         }
     }
 }

@@ -5,6 +5,13 @@ using UnityEngine;
 public class ItemInfo 
 {
     public int id;
+    
+    
 
-    public ItemInfo(int id) { this.id = id; }
+    public ItemInfo(int id)
+    {
+        this.id = id;
+       
+    }
+   
 }
