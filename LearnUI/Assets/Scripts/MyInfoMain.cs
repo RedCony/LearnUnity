@@ -39,19 +39,19 @@ public class MyInfoMain : MonoBehaviour
        
         
         //아이템 획득
-        var itemInfo0 = this.GetItem(100);
-        var itemInfo1 = this.GetItem(101);
-        var itemInfo2 = this.GetItem(102);
-        var itemInfo3 = this.GetItem(103);
-        var itemInfo4 = this.GetItem(104);
-        var itemInfo5 = this.GetItem(105);
-        var itemInfo6 = this.GetItem(106);
-        var itemInfo7 = this.GetItem(107);
-        var itemInfo8 = this.GetItem(108);
-        var itemInfo9 = this.GetItem(109);
-        var itemInfo10 = this.GetItem(110);
-        var itemInfo11 = this.GetItem(111);
-        var itemInfo12 = this.GetItem(112);
+        var itemInfo0 = this.GetItem(100,2);
+        var itemInfo1 = this.GetItem(101,1);
+        var itemInfo2 = this.GetItem(102,11);
+        var itemInfo3 = this.GetItem(103,1);
+        var itemInfo4 = this.GetItem(104,1);
+        var itemInfo5 = this.GetItem(105,3);
+        var itemInfo6 = this.GetItem(106,3);
+        var itemInfo7 = this.GetItem(107,1);
+        var itemInfo8 = this.GetItem(108,1);
+        var itemInfo9 = this.GetItem(109,2);
+        var itemInfo10 = this.GetItem(110,1);
+        var itemInfo11 = this.GetItem(111,3);
+        var itemInfo12 = this.GetItem(112,4);
 
 
 
@@ -91,9 +91,9 @@ public class MyInfoMain : MonoBehaviour
         //uiinventory에게 배열 전달 
         this.uiInventory.Init(itemInfos, dicItemDatas);
     }
-    public ItemInfo GetItem(int id)
+    public ItemInfo GetItem(int id,int count)
     {
-        return new ItemInfo(id);
+        return new ItemInfo(id,count);
     }
 
 }

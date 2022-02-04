@@ -16,7 +16,8 @@ public class UIInventory : MonoBehaviour
 
             if (i > itemInfos.Length - 1)
             {
-                uiItem.Init(null);
+                ItemInfo uiItemInfo = null;
+                uiItem.Init(null, uiItemInfo);
             }
             else
             {
@@ -24,7 +25,7 @@ public class UIInventory : MonoBehaviour
                 ItemData itemData = dic[uiItemInfo.id];
                 //화면에 디스플레이 
                 Sprite sp = atlas.GetSprite(itemData.spritename);
-                uiItem.Init(sp);
+                uiItem.Init(sp, uiItemInfo);
             }
         }
     }

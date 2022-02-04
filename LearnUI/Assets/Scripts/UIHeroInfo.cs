@@ -12,6 +12,7 @@ public class UIHeroInfo : MonoBehaviour
     public Text texthealth;
     public Text textgold;
     public Text textgem;
+    
 
     public void Init(string name,int level, float attack, float defense, float health, int gold, int gem)
     {
@@ -22,6 +23,7 @@ public class UIHeroInfo : MonoBehaviour
         this.texthealth.text = health.ToString();
         this.textgold.text = gold.ToString();
         this.textgem.text = gem.ToString();
+        
     }
 
 }
