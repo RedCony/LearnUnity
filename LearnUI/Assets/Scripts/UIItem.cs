@@ -14,7 +14,7 @@ public class UIItem : MonoBehaviour
 
     void Start()
     {
-        //this.UIItemInfo = FindObjectOfType("UIItemInfo");
+        //this.UIItemInfo = GameObject<UIHeroInfo>();
         this.btninfo.onClick.AddListener(() => {
             UIItemInfo.Open();
         });
