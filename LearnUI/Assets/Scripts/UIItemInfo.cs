@@ -24,12 +24,12 @@ public class UIItemInfo : MonoBehaviour
 
     public void Open()
     {
-        this.gameObject.SetActive(true);
+        this.uIItem.gameObject.SetActive(true);
     }
 
     public void Close()
     {
-        this.gameObject.SetActive(false);
+        this.uIItem.gameObject.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
