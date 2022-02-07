@@ -1,0 +1,68 @@
+[
+  {
+    "id": 100,
+    "name": "axe",
+    "spriteName": "equip_axe_0",
+    "sellPrice": 99
+  },
+  {
+    "id": 101,
+    "name": "bracelet",
+    "spriteName": "equip_bracelet",
+    "sellPrice": 50
+  },
+  {
+    "id": 102,
+    "name": "cyristal",
+    "spriteName": "equip_cyristal",
+    "sellPrice": 103
+  },
+  {
+    "id": 103,
+    "name": "red gem",
+    "spriteName": "equip_gem_red",
+    "sellPrice": 300
+  },
+  {
+    "id": 104,
+    "name": "fish ",
+    "spriteName": "equip_fish",
+    "sellPrice": 15
+  },
+  {
+    "id": 105,
+    "name": "leaf",
+    "spriteName": "equip_leaf",
+    "sellPrice": 24
+  },
+  {
+    "id": 106,
+    "name": "blue potion",
+    "spriteName": "equip_potion_blue_3",
+    "sellPrice": 10
+  },
+  {
+    "id": 107,
+    "name": "green potion",
+    "spriteName": "equip_potion_green_4",
+    "sellPrice": 100
+  },
+  {
+    "id": 108,
+    "name": "red potion",
+    "spriteName": "equip_potion_red_2",
+    "sellPrice": 5
+  },
+  {
+    "id": 109,
+    "name": "gold ring",
+    "spriteName": "equip_ring_gold",
+    "sellPrice": 250
+  },
+  {
+    "id": 110,
+    "name": "blue shield",
+    "spriteName": "equip_shield_blue",
+    "sellPrice": 180
+  }
+]
