@@ -1,0 +1,66 @@
+[
+  {
+    "id": 100,
+    "name": "Stage 1",
+    "require_level": 0,
+    "take_item_id_0": 107,
+    "take_item_id_1": 106,
+    "take_item_id_2": 101
+  },
+  {
+    "id": 101,
+    "name": "Stage 2",
+    "require_level": 1,
+    "take_item_id_0": 100,
+    "take_item_id_1": 101,
+    "take_item_id_2": 102
+  },
+  {
+    "id": 102,
+    "name": "Stage 3",
+    "require_level": 2,
+    "take_item_id_0": 102,
+    "take_item_id_1": 104,
+    "take_item_id_2": 103
+  },
+  {
+    "id": 103,
+    "name": "Stage 4",
+    "require_level": 3,
+    "take_item_id_0": 107,
+    "take_item_id_1": 105,
+    "take_item_id_2": 104
+  },
+  {
+    "id": 104,
+    "name": "Stage 5",
+    "require_level": 4,
+    "take_item_id_0": 105,
+    "take_item_id_1": 107,
+    "take_item_id_2": 108
+  },
+  {
+    "id": 105,
+    "name": "Stage 6",
+    "require_level": 5,
+    "take_item_id_0": 100,
+    "take_item_id_1": 108,
+    "take_item_id_2": 110
+  },
+  {
+    "id": 106,
+    "name": "Stage 7",
+    "require_level": 6,
+    "take_item_id_0": 111,
+    "take_item_id_1": 112,
+    "take_item_id_2": 109
+  },
+  {
+    "id": 107,
+    "name": "Stage 8",
+    "require_level": 7,
+    "take_item_id_0": 107,
+    "take_item_id_1": 108,
+    "take_item_id_2": 109
+  }
+]

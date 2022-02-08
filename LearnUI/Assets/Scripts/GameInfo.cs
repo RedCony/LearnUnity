@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameInfo : MonoBehaviour
+public class GameInfo 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int gold;
+    public int gem;
+    public int heart;
+    public int score;
 
-    // Update is called once per frame
-    void Update()
+    public List<StageInfo> stageInfos;
+
+    public List<ItemInfo> itemInfos;
+
+    public GameInfo()
     {
-        
+        this.stageInfos = new List<StageInfo>();
+        this.itemInfos = new List<ItemInfo>();
     }
+   
 }
