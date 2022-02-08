@@ -445,8 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fc24ffb6803c3419c2127cb8d338a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uistageslotPrefab: {fileID: 2104763506936435126, guid: ecf9c9f3d3230fc469880d94c2fd4a97, type: 3}
-  grid: {fileID: 276693908}
 --- !u!4 &542217537
 Transform:
   m_ObjectHideFlags: 0
@@ -735,6 +733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05542b4b79e55d44685bd7d75dd973e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uistageslotPrefab: {fileID: 2104763506936435126, guid: ecf9c9f3d3230fc469880d94c2fd4a97, type: 3}
+  grid: {fileID: 276693908}
 --- !u!1 &1908854170
 GameObject:
   m_ObjectHideFlags: 0

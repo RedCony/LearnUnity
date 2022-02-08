@@ -9,6 +9,8 @@ public class StageMain : MonoBehaviour
    
     void Start()
     {
+        
+
         DataManager.GetInstance().LoadItemData();
         DataManager.GetInstance().LoadStageData();
         DataManager.GetInstance().StageMissionData();
