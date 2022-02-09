@@ -18,7 +18,7 @@ public class UIStageReady : MonoBehaviour
     List<UIStageSlot> uiStageSlotList;
     void Start()
     {
-        this.textstagename.text = DataManager.GetInstance().DicStageDatas().Values.ToString();
+       
     }
 
     

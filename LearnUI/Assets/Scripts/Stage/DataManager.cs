@@ -4,14 +4,14 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.Linq;
 
-public class DataManager 
+public class DataManager
 {
     private static DataManager instance;
     private Dictionary<int, StageData> dicStageDatas;
     private Dictionary<int, StageMissionData> dicStageMissiondatas;
     private Dictionary<int, ItemData> dicItemDatas;
 
-
+    
     private DataManager() { }
 
     public static DataManager GetInstance()
