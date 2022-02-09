@@ -9,29 +9,31 @@ public class UIStage : MonoBehaviour
     public GameObject uistageslotPrefab;
     public GameObject grid;
 
-    private int length;
-    private DataManager dataManager;
+    //private int length;
     private UIStageSlot UIStageSlot;
 
     void Start()
     {
-        //dataManager.Displayall();
-        //Debug.Log(dataManager.GetCount());
         //this.UIStageSlot=this.uistageslotPrefab.GetComponent<UIStageSlot>();
         //this.grid.GetComponent<Transform>();
-
-
+        //this.length = DataManager.GetInstance().GetCount();
+        //CrateSlots();
+        //Debug.Log(length);
     }
    
     void Update()
     {
         
-        /*
-        for (int i=0;i< length;i++)
+       
+    }
+    /*
+    void CrateSlots()
+    {
+        for (int i = 0; i < length; i++)
         {
             var go = Instantiate(uistageslotPrefab);
             go.transform.parent = grid.transform;
         }
-       */
     }
+    */
 }

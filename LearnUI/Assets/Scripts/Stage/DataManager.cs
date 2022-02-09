@@ -25,7 +25,7 @@ public class DataManager
         var json = Resources.Load<TextAsset>("stage_data").text;
         this.dicStageDatas = JsonConvert.DeserializeObject<StageData[]>(json).ToDictionary(x => x.id);
         Debug.LogFormat("Loaded stage_data : {0}", this.dicStageDatas.Count);
-        Displayall();
+        GetCount();
     }
 
     public void LoadItemData()
@@ -45,7 +45,6 @@ public class DataManager
     public int GetCount()
     {
         return this.dicStageDatas.Count;
-       
     }
     public void Displayall()
     {
