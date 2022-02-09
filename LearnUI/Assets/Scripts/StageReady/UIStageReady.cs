@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.U2D;
+
 
 public class UIStageReady : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject uiItemStageReady;
+    public Transform grid;
+
+    public Button btnStart;
+    public Button btnClose;
+    public Text textstagename;
+    public Text textMissiondata;
+
+    List<UIStageSlot> uiStageSlotList;
     void Start()
     {
-        
+        this.textstagename.text = DataManager.GetInstance().DicStageDatas().Values.ToString();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

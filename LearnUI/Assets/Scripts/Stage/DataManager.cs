@@ -58,5 +58,13 @@ public class DataManager
         return this.dicStageDatas;
     }
 
+    public Dictionary<int, StageMissionData> DicStageMissiondatas()
+    {
+        return this.dicStageMissiondatas;
+    }
 
+    public Dictionary<int, ItemData> DicItemDatas()
+    {
+        return this.dicItemDatas;
+    }
 }

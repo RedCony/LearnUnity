@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 133724931}
   - component: {fileID: 133724930}
   m_Layer: 5
-  m_Name: Textstageready
+  m_Name: Textstagename
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,7 +431,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &452609711
 RectTransform:
@@ -477,6 +477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfa51ec124c5e344b8810e748957eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiItemStageReady: {fileID: 5815938990296790767, guid: b080759443d5dd14f85cd8fe24253ea1, type: 3}
+  grid: {fileID: 464930544}
+  btnStart: {fileID: 2010665578}
+  btnClose: {fileID: 2361263803041377531}
+  textstagename: {fileID: 0}
+  textMissiondata: {fileID: 1176140466}
 --- !u!1 &464930543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1460,7 @@ GameObject:
   - component: {fileID: 2010665575}
   - component: {fileID: 2010665577}
   - component: {fileID: 2010665576}
+  - component: {fileID: 2010665578}
   m_Layer: 5
   m_Name: brnStart
   m_TagString: Untagged
@@ -1519,6 +1526,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010665574}
   m_CullTransparentMesh: 1
+--- !u!114 &2010665578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010665574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2010665576}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &2361263803041377524
 RectTransform:
   m_ObjectHideFlags: 0
