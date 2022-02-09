@@ -53,5 +53,10 @@ public class DataManager
             Debug.LogFormat("name : {0}", kv.Value.name);
         }
     }
-   
+    public Dictionary<int,StageData> DicStageDatas()
+    {
+        return this.dicStageDatas;
+    }
+
+
 }

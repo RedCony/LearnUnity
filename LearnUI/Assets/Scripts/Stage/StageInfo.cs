@@ -7,6 +7,8 @@ public class StageInfo
     public int id;
     public int star;
 
+    public StageInfo() { }
+
     public StageInfo(int id,int star)
     {
         this.id = id;

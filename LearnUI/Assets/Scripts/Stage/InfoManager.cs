@@ -6,6 +6,7 @@ public class InfoManager
 {
     private static InfoManager instance;
     public GameInfo gameInfo;
+    public StageInfo stageInfo;
 
     private InfoManager()
     {
