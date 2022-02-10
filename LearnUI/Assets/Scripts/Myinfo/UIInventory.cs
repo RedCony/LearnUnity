@@ -26,7 +26,7 @@ public class UIInventory : MonoBehaviour
                 uiItemInfo = itemInfos[i];
                 ItemData itemData = dic[uiItemInfo.id];
                 //화면에 디스플레이 
-                Sprite sp = atlas.GetSprite(itemData.spritename);
+                Sprite sp = atlas.GetSprite(itemData.spriteName);
                 uiItem.Init(sp, uiItemInfo);
             }
         }

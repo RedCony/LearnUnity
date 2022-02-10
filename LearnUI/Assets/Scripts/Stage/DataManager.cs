@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.Linq;
+using System.IO;
+using System;
 
 public class DataManager
 {
@@ -41,7 +43,7 @@ public class DataManager
 
     public void StageMissionData()
     {
-        var json = Resources.Load<TextAsset>("stagemission_data").text;
+        var json = Resources.Load<TextAsset>("stage_mission_data").text;
         this.dicStageMissiondatas = JsonConvert.DeserializeObject<StageMissionData[]>(json).ToDictionary(x => x.id);
         Debug.LogFormat("Loaded stage_mission_data : {0}", this.dicStageMissiondatas.Count);
     }

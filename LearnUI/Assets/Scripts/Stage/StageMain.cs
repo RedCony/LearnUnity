@@ -53,12 +53,14 @@ public class StageMain : MonoBehaviour
             var num = i + 1;
             panel.Init(data.id, num);
             this.uiStageSlotList.Add(panel);
-
+            
             panel.btn.onClick.AddListener(() =>
             {
                 if (panel.State == UIStageSlot.eState.Open)
                 {
                     Debug.LogFormat("selected panel id: <color=white>{0}</color>", panel.Id);
+
+                    
 
                     StageMissionData stageMissiondata = DataManager.GetInstance().GetMissionData(data.stage_mission_id);
                     Debug.Log(stageMissiondata);
@@ -67,9 +69,9 @@ public class StageMain : MonoBehaviour
                     ItemData itemData0 = DataManager.GetInstance().GetItemData(data.take_item_id_0);
                     ItemData itemData1 = DataManager.GetInstance().GetItemData(data.take_item_id_1);
                     ItemData itemData2 = DataManager.GetInstance().GetItemData(data.take_item_id_2);
-                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData0.spritename);
-                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData1.spritename);
-                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData2.spritename);
+                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData0.spriteName);
+                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData1.spriteName);
+                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData2.spriteName);
 
                     ItemInfo itemInfo0 = InfoManager.GetInstance().GetItemInfo(itemData0.id);
                     int item0Count = (itemInfo0 == null) ? 0 : itemInfo0.count;
@@ -88,9 +90,9 @@ public class StageMain : MonoBehaviour
                         stageName = data.name,
                         missionName = stageMissiondata.missionname,
                         itemSpriteNames = new List<string> {
-                            itemData0.spritename,
-                            itemData1.spritename,
-                            itemData2.spritename,
+                            itemData0.spriteName,
+                            itemData1.spriteName,
+                            itemData2.spriteName,
                         },
                         itemCounts = new List<int> {
                             item0Count,

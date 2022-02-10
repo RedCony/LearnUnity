@@ -33,7 +33,7 @@ public class Myinfoinventory : MonoBehaviour
                 var go= Instantiate<GameObject>(this.uilistitemprefab,this.horizontalgrid);
                 var uilistitem = go.GetComponent<UIlistItem>();
                 ItemData data = this.dic[info.id];
-                var sp = this.spriteAtlas.GetSprite(data.spritename);
+                var sp = this.spriteAtlas.GetSprite(data.spriteName);
                 uilistitem.Init(info.id,sp,info.count);
             }
         }
@@ -60,7 +60,7 @@ public class Myinfoinventory : MonoBehaviour
         int i = 0;
         foreach(var data in this.dic.Values)
         {
-            var sp = this.spriteAtlas.GetSprite(data.spritename);
+            var sp = this.spriteAtlas.GetSprite(data.spriteName);
             var uilistitem = this.uIlistItems[i++];
             uilistitem.Init(data.id, sp, 0);
         }

@@ -34,10 +34,10 @@ public class UIStageSlot : MonoBehaviour
         get; private set;
     }
     
-    public void Init(int id,int stagenum)
+    public void Init(int id,int num)
     {
         this.Id = id;
-        this.stageNum.text = stageNum.ToString();
+        this.stageNum.text = num.ToString();
         this.State = eState.None;
         this.Lock();
     }

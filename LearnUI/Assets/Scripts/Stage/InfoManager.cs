@@ -19,6 +19,6 @@ public class InfoManager
     }
     public ItemInfo GetItemInfo(int id)
     {
-        return gameInfo.itemInfos[id];
+        return gameInfo.itemInfos.Find(x=>x.id==id);
     }
 }
