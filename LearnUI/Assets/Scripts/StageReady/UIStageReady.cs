@@ -39,6 +39,27 @@ public class UIStageReady : MonoBehaviour
 
         this.gameObject.SetActive(true);
     }
+    void Start()
+    {
+        this.btnStart.onClick.AddListener(() =>
+        {
+            Debug.Log("Game_Start");
+        });
+        this.btnClose.onClick.AddListener(() =>
+        {
+            this.Close();
+        });
+    }
+
+    public void Open()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        this.gameObject.SetActive(false);
+    }
     public void Init()
     {
 
