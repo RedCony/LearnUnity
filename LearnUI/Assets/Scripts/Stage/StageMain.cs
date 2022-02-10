@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
+using static UIStageReady;
+
 
 public class StageMain : MonoBehaviour
 {
     public GameObject uistageslotPrefab;
     public GameObject grid;
+    public UIStageReady uiStageReady;
+
 
     List<UIStageSlot> uiStageSlotList;
     int length;
@@ -34,9 +38,6 @@ public class StageMain : MonoBehaviour
         }
         Debug.Log("<color=cyan>ready to play!!!</color>");
 
-
-        //CrateSlots();
-
         InitStagePanel();
     }
 
@@ -58,7 +59,50 @@ public class StageMain : MonoBehaviour
                 if (panel.State == UIStageSlot.eState.Open)
                 {
                     Debug.LogFormat("selected panel id: <color=white>{0}</color>", panel.Id);
+
+                    StageMissionData stageMissiondata = DataManager.GetInstance().GetMissionData(data.stage_mission_id);
+                    Debug.Log(stageMissiondata);
+                    Debug.LogFormat("stage mission name: {0}", stageMissiondata.missionname);
+                    
+                    ItemData itemData0 = DataManager.GetInstance().GetItemData(data.take_item_id_0);
+                    ItemData itemData1 = DataManager.GetInstance().GetItemData(data.take_item_id_1);
+                    ItemData itemData2 = DataManager.GetInstance().GetItemData(data.take_item_id_2);
+                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData0.spritename);
+                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData1.spritename);
+                    Debug.LogFormat("item(0) sprite name: {1}", itemData0.id, itemData2.spritename);
+
+                    ItemInfo itemInfo0 = InfoManager.GetInstance().GetItemInfo(itemData0.id);
+                    int item0Count = (itemInfo0 == null) ? 0 : itemInfo0.count;
+                    Debug.LogFormat("item id: {0}, count: {1}", itemData0.id, item0Count);
+
+                    ItemInfo itemInfo1 = InfoManager.GetInstance().GetItemInfo(itemData1.id);
+                    int item1Count = (itemInfo1 == null) ? 0 : itemInfo1.count;
+                    Debug.LogFormat("item id: {0}, count: {1}", itemData1.id, item1Count);
+
+                    ItemInfo itemInfo2 = InfoManager.GetInstance().GetItemInfo(itemData2.id);
+                    int item2Count = (itemInfo2 == null) ? 0 : itemInfo2.count;
+                    Debug.LogFormat("item id: {0}, count: {1}", itemData2.id, item2Count);
+
+                    UIStageReadyParam param = new UIStageReadyParam()
+                    {
+                        stageName = data.name,
+                        missionName = stageMissiondata.missionname,
+                        itemSpriteNames = new List<string> {
+                            itemData0.spritename,
+                            itemData1.spritename,
+                            itemData2.spritename,
+                        },
+                        itemCounts = new List<int> {
+                            item0Count,
+                            item1Count,
+                            item2Count
+                        }
+                    };
+
+                    this.uiStageReady.Open(param);
+
                 }
+           
                 else
                 {
                     Debug.LogFormat("<color=white>{0}</color> is locked!", panel.Id);

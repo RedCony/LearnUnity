@@ -17,4 +17,8 @@ public class InfoManager
         if (InfoManager.instance == null) InfoManager.instance = new InfoManager();
         return InfoManager.instance;
     }
+    public ItemInfo GetItemInfo(int id)
+    {
+        return gameInfo.itemInfos[id];
+    }
 }

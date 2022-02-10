@@ -7,23 +7,40 @@ using UnityEngine.U2D;
 
 public class UIStageReady : MonoBehaviour
 {
-    public GameObject uiItemStageReady;
-    public Transform grid;
+    public struct UIStageReadyParam
+    {
+        public string stageName;
+        public string missionName;
+        public List<string> itemSpriteNames;
+        public List<int> itemCounts;
+    }
 
     public Button btnStart;
     public Button btnClose;
     public Text textstagename;
     public Text textMissiondata;
-
-    List<UIStageSlot> uiStageSlotList;
-    void Start()
-    {
-       
-    }
-
+    public Image[] itemIconImages;
+    public Text[] itemCountTexts;
+    public SpriteAtlas atlas;
+    public Transform grid;
     
-    void Update()
+    public void Open(UIStageReadyParam param)
     {
-        
+        this.textstagename.text = param.stageName;
+        this.textMissiondata.text = param.missionName;
+
+        for (int i = 0; i < this.itemIconImages.Length; i++)
+        {
+            var sp = this.atlas.GetSprite(param.itemSpriteNames[i]);
+            this.itemIconImages[i].sprite = sp; //아이콘 설정 
+            this.itemIconImages[i].SetNativeSize(); //안찌그러 지게 
+            this.itemCountTexts[i].text = param.itemCounts[i].ToString();   //갯수 설정 
+        }
+
+        this.gameObject.SetActive(true);
+    }
+    public void Init()
+    {
+
     }
 }

@@ -1,14 +1,14 @@
 [
   {
     "id": 1000,
-    "misstionname": "Defeat monster"
+    "missionname": "Defeat monster"
   },
   {
     "id": 1001,
-    "misstionname": "kill boss"
+    "missionname": "kill boss"
   },
   {
     "id": 1002,
-    "misstionname": "점수 600 이상"
+    "missionname": "점수 600 이상"
   }
 ]

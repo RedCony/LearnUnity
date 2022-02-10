@@ -11,7 +11,6 @@ public class DataManager
     private Dictionary<int, StageMissionData> dicStageMissiondatas;
     private Dictionary<int, ItemData> dicItemDatas;
 
-    
     private DataManager() { }
 
     public static DataManager GetInstance()
@@ -23,9 +22,14 @@ public class DataManager
     public void LoadStageData()
     {
         var json = Resources.Load<TextAsset>("stage_data").text;
-        this.dicStageDatas = JsonConvert.DeserializeObject<StageData[]>(json).ToDictionary(x => x.id);
+        var arr = JsonConvert.DeserializeObject<StageData[]>(json);
+        foreach (var data in arr) {
+            //Debug.Log("=>" + data.stage_mission_id);
+        }
+        this.dicStageDatas = arr.ToDictionary(x => x.id);
         Debug.LogFormat("Loaded stage_data : {0}", this.dicStageDatas.Count);
-        GetCount();
+        //GetCount();
+        //Displayall();
     }
 
     public void LoadItemData()
@@ -48,11 +52,17 @@ public class DataManager
     }
     public void Displayall()
     {
-        foreach (KeyValuePair<int, StageData> kv in dicStageDatas)
-        {
-            Debug.LogFormat("name : {0}", kv.Value.name);
+        Debug.Log(dicStageDatas.Count);
+        foreach (var data in this.dicStageDatas.Values) {
+            Debug.Log("====>" + data.stage_mission_id);
         }
+        //foreach (KeyValuePair<int, StageData> kv in dicStageDatas)
+        //{
+        //    Debug.LogFormat("stage_mission_id : {0}", kv.Value.stage_mission_id);
+        //}
     }
+
+
     public Dictionary<int,StageData> DicStageDatas()
     {
         return this.dicStageDatas;
@@ -66,5 +76,20 @@ public class DataManager
     public Dictionary<int, ItemData> DicItemDatas()
     {
         return this.dicItemDatas;
+    }
+
+
+    public StageData GetStageData(int id)
+    {
+        return this.dicStageDatas[id];
+    }
+    public StageMissionData GetMissionData(int id)
+    {
+        return this.dicStageMissiondatas[id];
+    }
+    public ItemData GetItemData(int id)
+    {
+        return this.dicItemDatas[id];
+        
     }
 }
