@@ -65,7 +65,7 @@ public class DataManager
     }
 
 
-    public Dictionary<int,StageData> DicStageDatas()
+    public Dictionary<int,StageData> GetDicStageDatas()
     {
         return this.dicStageDatas;
     }
@@ -93,5 +93,12 @@ public class DataManager
     {
         return this.dicItemDatas[id];
         
+    }
+    public int GetIndexOfStageData(int id)
+    {
+        if (!this.dicStageDatas.ContainsKey(id)) { return -1; }
+
+        var stageDataList = this.dicStageDatas.Values.ToList();
+        return stageDataList.IndexOf(this.dicStageDatas[id]);
     }
 }

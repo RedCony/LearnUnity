@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class UIStageLock : MonoBehaviour
 {
+    public struct UIStageLockParam
+    {
+        public string stageName;
+        public int requiredlevelnum;
+        
+    }
     public Text stageName;
     public Text requiredlevelnum;
     public Button btnOk;
@@ -46,7 +52,15 @@ public class UIStageLock : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public void Open(UIStageLockParam param)
+    {
+        this.stageName.text = param.stageName;
+        this.requiredlevelnum.text = param.requiredlevelnum.ToString();
 
+      
+
+        this.gameObject.SetActive(true);
+    }
 
     void Update()
     {

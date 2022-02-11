@@ -4,13 +4,15 @@ using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
 using static UIStageReady;
-
+using static UIStageLock;
+using System.Linq;
 
 public class StageMain : MonoBehaviour
 {
     public GameObject uistageslotPrefab;
     public GameObject grid;
     public UIStageReady uiStageReady;
+    public UIStageLock UIStageLock;
 
 
     List<UIStageSlot> uiStageSlotList;
@@ -46,7 +48,7 @@ public class StageMain : MonoBehaviour
         this.uiStageSlotList = new List<UIStageSlot>();
 
         int i = 0;
-        foreach (StageData data in DataManager.GetInstance().DicStageDatas().Values)
+        foreach (StageData data in DataManager.GetInstance().GetDicStageDatas().Values)
         {
             var go = Instantiate(this.uistageslotPrefab, grid.transform);
             var panel = go.GetComponent<UIStageSlot>();
@@ -56,7 +58,7 @@ public class StageMain : MonoBehaviour
             
             panel.btn.onClick.AddListener(() =>
             {
-                if (panel.State == UIStageSlot.eState.Open)
+                if (panel.State == UIStageSlot.eState.Open || panel.State==UIStageSlot.eState.Clear)
                 {
                     Debug.LogFormat("selected panel id: <color=white>{0}</color>", panel.Id);
 
@@ -107,6 +109,12 @@ public class StageMain : MonoBehaviour
            
                 else
                 {
+                    UIStageLockParam uIStageLockParam = new UIStageLockParam()
+                    {
+                        stageName = data.name,
+                        requiredlevelnum = data.require_level
+                    };
+                    this.UIStageLock.Open(uIStageLockParam);
                     Debug.LogFormat("<color=white>{0}</color> is locked!", panel.Id);
                 }
             });
@@ -114,11 +122,98 @@ public class StageMain : MonoBehaviour
             i++;
 
         }
+
+        //check stageinfo
         if (InfoManager.GetInstance().gameInfo.stageInfos.Count == 0)
         {
             //havent play yet 
             var panel = this.uiStageSlotList[0];   //첫번재 패널 
             panel.Open();
+        }
+        else 
+        {
+            
+            //Debug.Log(InfoManager.GetInstance().gameInfo.stageInfos.Count);
+
+            int lastIndex = InfoManager.GetInstance().gameInfo.stageInfos.Count-1 ;
+
+            StageInfo lastInfo = InfoManager.GetInstance().gameInfo.stageInfos[lastIndex];
+
+            for (int j = 0; j <= lastIndex; j++)
+            {
+                StageInfo clearstageInfo = InfoManager.GetInstance().gameInfo.stageInfos[j];
+
+                this.uiStageSlotList[j].Clear(clearstageInfo.star);
+
+                int nextId = clearstageInfo.id + 1;
+
+                var stageDataDic = DataManager.GetInstance().GetDicStageDatas();
+
+                var list = stageDataDic.Values.ToList();
+                var nextData = stageDataDic[nextId];
+                var nextIndex = list.IndexOf(nextData);
+
+                if (nextIndex > 0 && nextIndex < DataManager.GetInstance().GetDicStageDatas().Count-1)
+                {
+                    //int nextIndex = 0;
+                    //foreach (var pair in stageDataDic) {
+                    //    if (pair.Value.id == nextId) {
+                    //        break;
+                    //    }
+                    //    nextIndex++;
+                    //}
+
+                    // Debug.LogFormat("nextIndex: {0}", nextIndex);
+
+
+                    this.uiStageSlotList[nextIndex].Open();
+
+
+                }
+                else
+                {
+                    
+                    Debug.Log("스테이지 클리어");
+                }
+
+            }
+
+            //Debug.Log(lastInfo.id);
+
+           
+
+
+
+            /*
+            int stageinfocount = InfoManager.GetInstance().gameInfo.stageInfos.Count;
+
+            for (int j = 0; j < stageinfocount; j++)
+            {
+                StageInfo clearstageInfo = InfoManager.GetInstance().gameInfo.stageInfos[j];
+               
+                //update slot
+                this.uiStageSlotList[j].Clear(clearstageInfo.star);
+
+                //open next(현재 스테이지 
+                int nextStageId = clearstageInfo.id + 1;
+
+
+                //다음 스테이지가 있는지 확인
+                int nextindex = DataManager.GetInstance().GetIndexOfStageData(nextStageId);
+                int stagedatacount = DataManager.GetInstance().GetDicStageDatas().Count;
+                //Debug.Log(stagedatacount);
+
+                if( nextindex > 0 && nextindex < stagedatacount)
+                {
+                     this.uiStageSlotList[nextStageId].Open();
+                }
+                else
+                {
+                    Debug.Log("스테이지 클리어");
+                }
+
+            }
+            */
         }
     }
     
