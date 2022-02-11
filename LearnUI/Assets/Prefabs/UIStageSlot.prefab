@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8988014438354816285}
   - component: {fileID: 4590037070244838810}
   - component: {fileID: 6337887823227161827}
+  - component: {fileID: 4638246772111314988}
   m_Layer: 5
   m_Name: bgicon
   m_TagString: Untagged
@@ -76,6 +77,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4638246772111314988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206292921661406429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &728505221496046190
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +424,7 @@ GameObject:
   - component: {fileID: 597303748780181549}
   - component: {fileID: 7677855360132946144}
   - component: {fileID: 4178063393364909495}
+  - component: {fileID: 7997468116144838180}
   m_Layer: 5
   m_Name: bgiconlock
   m_TagString: Untagged
@@ -473,6 +490,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7997468116144838180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4157739534168962770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &5521532267553288534
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +630,7 @@ GameObject:
   - component: {fileID: 9117057314459999946}
   - component: {fileID: 3429922996592710858}
   - component: {fileID: 3911952525307158933}
+  - component: {fileID: 1606272243839369710}
   m_Layer: 5
   m_Name: bgicon
   m_TagString: Untagged
@@ -663,6 +696,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1606272243839369710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442093957507313660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7506086887501622984
 GameObject:
   m_ObjectHideFlags: 0
