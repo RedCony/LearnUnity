@@ -9,9 +9,12 @@ using System;
 public class DataManager
 {
     private static DataManager instance;
+
     private Dictionary<int, StageData> dicStageDatas;
     private Dictionary<int, StageMissionData> dicStageMissiondatas;
     private Dictionary<int, ItemData> dicItemDatas;
+    private Dictionary<int, ShopData> dicShopDatas;
+    private Dictionary<int, BudgetData> dicBudgetDatas;
 
     private DataManager() { }
 
@@ -46,6 +49,20 @@ public class DataManager
         var json = Resources.Load<TextAsset>("stage_mission_data").text;
         this.dicStageMissiondatas = JsonConvert.DeserializeObject<StageMissionData[]>(json).ToDictionary(x => x.id);
         Debug.LogFormat("Loaded stage_mission_data : {0}", this.dicStageMissiondatas.Count);
+    }
+
+    public void LoadShopData()
+    {
+        var json = Resources.Load<TextAsset>("shop_data").text;
+        this.dicShopDatas = JsonConvert.DeserializeObject<ShopData[]>(json).ToDictionary(x => x.id);
+        Debug.LogFormat("Loaded shop_data : {0}", this.dicShopDatas.Count);
+    }
+
+    public void LoadBudgetData()
+    {
+        var json = Resources.Load<TextAsset>("budget_data").text;
+        this.dicBudgetDatas = JsonConvert.DeserializeObject<BudgetData[]>(json).ToDictionary(x => x.id);
+        Debug.LogFormat("Loaded budget_data : {0}", this.dicBudgetDatas.Count);
     }
 
     public int GetCount()
@@ -100,5 +117,47 @@ public class DataManager
 
         var stageDataList = this.dicStageDatas.Values.ToList();
         return stageDataList.IndexOf(this.dicStageDatas[id]);
+    }
+
+    public List<ShopData> GetShopGoldDatas() 
+    {
+        List<ShopData> datas = new List<ShopData>();
+        foreach(ShopData shopData in this.dicShopDatas.Values)
+        {
+            if (shopData.type == (int)GameEnums.eBudget.Gold)
+            {
+                datas.Add(shopData);
+            }
+        }
+        return datas;
+    }
+    public List<ShopData> GetShopGemDatas()
+    {
+        List<ShopData> datas = new List<ShopData>();
+        foreach (ShopData shopData in this.dicShopDatas.Values)
+        {
+            if (shopData.type == (int)GameEnums.eBudget.Gem)
+            {
+                datas.Add(shopData);
+            }
+        }
+        return datas;
+    }
+    public List<ShopData> GetShopSoulGemDatas()
+    {
+        List<ShopData> datas = new List<ShopData>();
+        foreach (ShopData shopData in this.dicShopDatas.Values)
+        {
+            if (shopData.type == (int)GameEnums.eBudget.SoulGem)
+            {
+                datas.Add(shopData);
+            }
+        }
+        return datas;
+    }
+
+    public BudgetData GetBudgetDatas(int id)
+    {
+        return this.dicBudgetDatas[id];
     }
 }
