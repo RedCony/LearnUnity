@@ -217,7 +217,7 @@ public class StageMain : MonoBehaviour
         }
     }
     
-
+    /*
     void LoadStageInfo()
     {
         string path = Application.persistentDataPath + "/stage_info.json";
@@ -226,6 +226,7 @@ public class StageMain : MonoBehaviour
         InfoManager.GetInstance().stageInfo = JsonConvert.DeserializeObject<StageInfo>(json);
         //Debug.LogFormat("stageInfo loaded : {0}", InfoManager.GetInstance().stageInfo);
     }
+    */
     void LoadGameInfo()
     {
         string path = Application.persistentDataPath + "/game_info.json";
@@ -261,7 +262,7 @@ public class StageMain : MonoBehaviour
             go.transform.parent = grid.transform;
         }
     }
-
+    /*
     void CreateAndSaveStageInfo()
     {
         InfoManager.GetInstance().stageInfo = new StageInfo();
@@ -272,6 +273,7 @@ public class StageMain : MonoBehaviour
         File.WriteAllText(path, json);
         //print("saved game_info.json");
     }
+    */
     void Update()
     {
        

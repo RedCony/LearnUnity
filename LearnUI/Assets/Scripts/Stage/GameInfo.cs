@@ -13,10 +13,13 @@ public class GameInfo
 
     public List<ItemInfo> itemInfos;
 
+    public List<MissionInfo> missionInfos;
+
     public GameInfo()
     {
         this.stageInfos = new List<StageInfo>();
         this.itemInfos = new List<ItemInfo>();
+        this.missionInfos = new List<MissionInfo>();
     }
    
 }

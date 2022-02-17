@@ -1,0 +1,20 @@
+[
+  {
+    "id": "500",
+    "name": "soul gem",
+    "spriteName": "Icon_ImageIcon_Soulgem",
+    "hexColor": "FE3737"
+  },
+  {
+    "id": "501",
+    "name": "gem",
+    "spriteName": "Icon_ImageIcon_Gem",
+    "hexColor": "4387D6"
+  },
+  {
+    "id": "502",
+    "name": "gold",
+    "spriteName": "Icon_ImageIcon_Coin",
+    "hexColor": "F9AF18"
+  }
+]

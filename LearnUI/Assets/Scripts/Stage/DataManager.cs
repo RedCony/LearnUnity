@@ -16,7 +16,20 @@ public class DataManager
     private Dictionary<int, ShopData> dicShopDatas;
     private Dictionary<int, BudgetData> dicBudgetDatas;
 
-    private DataManager() { }
+    private Dictionary<int, BudgetMissionData> dicBudgetMissionDatas;
+    private Dictionary<int, MissionData> dicMissionDatas;
+
+    private ArrayList list = new ArrayList();
+
+    private DataManager()
+    {
+        this.dicBudgetMissionDatas = new Dictionary<int, BudgetMissionData>();
+        this.dicMissionDatas = new Dictionary<int, MissionData>();
+
+        this.list.Add(this.dicBudgetMissionDatas);
+        this.list.Add(this.dicMissionDatas);
+
+    }
 
     public static DataManager GetInstance()
     {
@@ -159,5 +172,46 @@ public class DataManager
     public BudgetData GetBudgetDatas(int id)
     {
         return this.dicBudgetDatas[id];
+    }
+
+
+    public void LoadData<T>(string path) where T : RawData
+    {
+        
+        var asset = Resources.Load<TextAsset>(path);
+        var json = asset.text;
+
+        var arr = JsonConvert.DeserializeObject<T[]>(json);
+     
+        for(int i =0;i<this.list.Count;i++)
+        {
+            var obj = this.list[i];
+            Type[] arguments = obj.GetType().GetGenericArguments();
+            Type valueType = arguments[1];
+            Debug.LogFormat("valueType: {0}", valueType);
+
+            if (valueType == typeof(T))
+            {
+                this.list[i] = arr.ToDictionary(x => x.id);
+                break;
+            }
+        }
+       // Debug.LogFormat("target: {0},{1}", tartget, tartget.Count);
+    }
+
+    public Dictionary<int,T> GetData<T>() where T : RawData
+    {
+        foreach (object obj in this.list)
+        {
+            Type[] arguments = obj.GetType().GetGenericArguments();
+            Type valueType = arguments[1];
+            Debug.LogFormat("valueType: {0}", valueType);
+
+            if (valueType == typeof(T))
+            {
+                return obj as Dictionary<int, T>;
+            }
+        }
+        return null;
     }
 }
