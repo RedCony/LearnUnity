@@ -13,11 +13,14 @@ public class DataManager
     private Dictionary<int, StageData> dicStageDatas;
     private Dictionary<int, StageMissionData> dicStageMissiondatas;
     private Dictionary<int, ItemData> dicItemDatas;
+
     private Dictionary<int, ShopData> dicShopDatas;
     private Dictionary<int, BudgetData> dicBudgetDatas;
 
     private Dictionary<int, BudgetMissionData> dicBudgetMissionDatas;
     private Dictionary<int, MissionData> dicMissionDatas;
+
+    private Dictionary<int, LanguageData> dicLanguageDatas;
 
     private ArrayList list = new ArrayList();
 
@@ -213,5 +216,21 @@ public class DataManager
             }
         }
         return null;
+    }
+    public void LoadLanguageData()
+    {
+        var json = Resources.Load<TextAsset>("language_data").text;
+        this.dicLanguageDatas = JsonConvert.DeserializeObject<LanguageData[]>(json).ToDictionary(x => x.id);
+        Debug.LogFormat("Loaded language_data : {0}", this.dicLanguageDatas.Count);
+    }
+
+    public LanguageData GetLanguageData(int id)
+    {
+        return this.dicLanguageDatas[id];
+    }
+    public LanguageData GetLanguageData(SystemLanguage lang)
+    {
+        var data = this.dicLanguageDatas.Values.ToList().Find(x=>x.language.Equals((int)lang));
+        return data;
     }
 }

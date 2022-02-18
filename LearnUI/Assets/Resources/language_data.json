@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "country": "미국",
+    "language": 10,
+    "spriteName": "Language_Small_Eng",
+    "spriteLName": "Language_Large_Eng"
+  },
+  {
+    "id": 1,
+    "country": "독일",
+    "language": 8,
+    "spriteName": "Language_Small_Deu",
+    "spriteLName": "Language_Large_Deu"
+  },
+  {
+    "id": 2,
+    "country": "프랑스",
+    "language": 14,
+    "spriteName": "Language_Small_Fra",
+    "spriteLName": "Language_Large_Fra"
+  },
+  {
+    "id": 3,
+    "country": "스페인",
+    "language": 34,
+    "spriteName": "Language_Small_Esp",
+    "spriteLName": "Language_Large_Esp"
+  },
+  {
+    "id": 4,
+    "country": "대한민국",
+    "language": 23,
+    "spriteName": "Language_Small_Kor",
+    "spriteLName": "Language_Large_Kor"
+  },
+  {
+    "id": 5,
+    "country": "중국",
+    "language": 6,
+    "spriteName": "Language_Small_Chn",
+    "spriteLName": "Language_Large_Chn"
+  },
+  {
+    "id": 6,
+    "country": "대만",
+    "language": 36,
+    "spriteName": "Language_Small_Twn",
+    "spriteLName": "Language_Large_Twn"
+  },
+  {
+    "id": 7,
+    "country": "일본",
+    "language": 22,
+    "spriteName": "Language_Small_Jpn",
+    "spriteLName": "Language_Large_Jpn"
+  },
+  {
+    "id": 8,
+    "country": "포르투칼",
+    "language": 28,
+    "spriteName": "Language_Small_Prt",
+    "spriteLName": "Language_Large_Prt"
+  },
+  {
+    "id": 9,
+    "country": "유고슬라비아",
+    "language": 31,
+    "spriteName": "Language_Small_Rus",
+    "spriteLName": "Language_Large_Rus"
+  },
+  {
+    "id": 10,
+    "country": "인도",
+    "language": 20,
+    "spriteName": "Language_Small_Ind",
+    "spriteLName": "Language_Large_Ind"
+  },
+  {
+    "id": 11,
+    "country": "터키",
+    "language": 37,
+    "spriteName": "Language_Small_Tur",
+    "spriteLName": "Language_Large_Tur"
+  }
+]
