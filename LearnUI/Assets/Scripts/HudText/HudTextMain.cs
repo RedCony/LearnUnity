@@ -8,16 +8,20 @@ public class HudTextMain : MonoBehaviour
 {
     public Button btn1;
     public Button btn2;
+    //public Text damage;
 
     public Animator anim1;   //player1 
     public Animator anim2;   //player2 
 
     public ParticleSystem fs;
     public Transform hudPivot;
-    public GameObject hudPivotPrefab;
+    public GameObject hudPivotPrefab; 
     public RectTransform canvasRectTrans;
+
+    
     void Start()
     {
+        
         var animEventReceiver1 = this.anim1.gameObject.GetComponent<AnimationEventReceiver>();
         animEventReceiver1.triggerAnimationEvent.AddListener((eventName) => {
             Debug.LogFormat("<color=yellow>eventName: {0}</color>", eventName);
