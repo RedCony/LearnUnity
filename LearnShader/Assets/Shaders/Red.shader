@@ -1,0 +1,28 @@
+Shader "Red"
+{
+    Properties
+    {
+       
+    }
+    SubShader
+    {
+        Tags { "RenderType"="Opaque" }
+ 
+        CGPROGRAM
+       
+        #pragma surface surf Standard fullforwardshadows
+
+        struct Input
+        {
+            float4 color:COLOR;
+        };
+
+        void surf (Input IN, inout SurfaceOutputStandard o)
+        {
+            o.Albedo = float3(1,0,0);
+            o.Alpha = 1;
+        }
+        ENDCG
+    }
+    FallBack "Diffuse"
+}
