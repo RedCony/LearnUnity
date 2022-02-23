@@ -33,9 +33,10 @@ Shader "Custom/lerp"
             
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
             fixed4 d = tex2D(_MainTex2, IN.uv_MainTex2);
-            o.Albedo = lerp(c.rgb,d.rgb,((1- _AlphaTest)  +_lerpTest ));
-            _AlphaTest = c.a;
-            o.Alpha = (_AlphaTest * _AlphaBrightDark);
+            o.Albedo = lerp((c.rgb + _AlphaBrightDark),d.rgb, (_lerpTest+(1- c.a)));
+
+            o.Alpha = c.a;
+           
         }
         ENDCG
     }
