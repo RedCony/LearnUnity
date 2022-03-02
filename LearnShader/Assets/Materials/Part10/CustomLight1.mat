@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CustomLight1
+  m_Shader: {fileID: 4800000, guid: 679c76ef4dc828749ac0d5acf850fd17, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: f63a4d28b2a89a64bb3b313106de4feb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GlossTex:
+        m_Texture: {fileID: 2800000, guid: 2fb3ecf644515d54f8706c1b97c733f2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: df5a70bb4367244418fd223d47e6e409, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _RimPow: 13
+    - _SpecPow: 10
+    - _SpecPow2: 10
+    m_Colors:
+    - _RimCol: {r: 0.7830189, g: 0.6788154, b: 0.63897294, a: 1}
+    - _SpecCol: {r: 0.5568628, g: 0.42352942, b: 0.37254903, a: 1}
+    - _SpecCol2: {r: 0.5568628, g: 0.42352945, b: 0.37254903, a: 1}
+  m_BuildTextureStacks: []
