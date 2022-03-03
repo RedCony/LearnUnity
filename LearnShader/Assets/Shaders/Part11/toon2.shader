@@ -5,7 +5,7 @@ Shader "Custom/toon2"
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _OutlineTex("outlint texture", 2D) = "white"{}
         _BumpMap("NormalMap", 2D) = "bump" {}
-        _LineLength("LineLength",Range(0,1)) = 0.01
+        _LineLength("LineLength",Range(0,1)) = 0.005
         _LineCol("Line Color",Color) = (1,1,1,1)
     }
         SubShader
