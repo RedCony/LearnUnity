@@ -29,11 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cut: 0
-    - _Glossiness: 0.5
-    - _Metallic: 0
-    - _OutThinkness: 1.28
+    - _Cut: 1
+    - _OutThinkness: 1.15
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutColor: {r: 5.235363, g: 0.42149112, b: 0.42149112, a: 1}
+    - _OutColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

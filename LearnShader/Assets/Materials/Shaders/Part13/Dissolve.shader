@@ -11,7 +11,7 @@ Shader "Custom/Dissolve"
     SubShader
     {
         Tags { "RenderType"= "Transparent" "Queue" = "Transparent" }
-
+        
         CGPROGRAM
         #pragma surface surf Lambert alpha:fade
 
@@ -37,7 +37,7 @@ Shader "Custom/Dissolve"
             o.Albedo = c.rgb;
 
             float alpha;
-            if (noise.r >= _Cut) { alpha = 1; }
+            if (noise.r > _Cut) { alpha = 1; }
             else { alpha = 0; }
 
             float outline;

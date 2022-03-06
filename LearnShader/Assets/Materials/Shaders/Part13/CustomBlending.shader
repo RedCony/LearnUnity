@@ -10,7 +10,7 @@ Shader "Custom/CustomBlending"
     }
     SubShader
     {
-        Tags { "RenderType"= "Transparent" "Queue" = "Transparent" "IgnotrPtojector"="True"}
+        Tags { "RenderType"= "Transparent" "Queue" = "Transparent" "IgnotrProjector"="True"}
         zwrite off
         blend SrcAlpha One
         Blend[_SrcBlend][_DstBlend]
